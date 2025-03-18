@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Navbar with Search</title>
+    <link rel="stylesheet" href="Dafa.css">
+</head>
+<body>
+  <script>
+    const text = "Dafa Achmad Ibrahim";
+    let index = 0;
+    function typeEffect() {
+        if (index < text.length) {
+            document.getElementById("typing").innerHTML += text.charAt(index);
+            index++;
+            setTimeout(typeEffect, 150); // Kecepatan ketikan
+        }
+    }
+    window.onload = typeEffect; // Memulai efek saat halaman dimuat
+    
+    document.querySelectorAll('.nav-links a').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+
+            const targetId = this.getAttribute('href').substring(1);
+            const targetSection = document.getElementById(targetId);
+
+            if (targetSection) {
+                const offsetTop = targetSection.offsetTop - document.querySelector(".navbar").offsetHeight;
+
+                window.scrollTo({
+                    top: offsetTop,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    });
+</script>
+
+
+    <div class="navbar">
+        <div class="logo">
+            <img src="simbol.jpg" alt="simbol">
+        </div>
+        <nav class="nav-links">
+            <div class="menu">
+                <a href="#home">Home</a>
+                <a href="#about">about</a>
+                <a href="#skills">skills</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </nav>
+    </div>
+
+    <div class="judul">
+        <h1>Portofolio</h1>
+    </div>
+    
+    <section class="home" id="home">
+        <div class="dapa">
+            <div class="hero-left">
+                <h3 class="pre-title">My Name</h3>
+<h1 class="hero-name"><span id="typing"></span></h1>
+
+                <p class="hero-praf">
+                    I am a student with a strong interest in Software Engineering. Currently, I am learning C++ and back-end development, focusing on building efficient applications and systems. I am always eager to improve my analytical and problem-solving skills while exploring new technologies.
+                </p>
+            
+
+            </div>
+            <div class="hero-right">
+                <img src="anime.jpg" alt="foto">
+            </div>
+        </div>
+    </section>
+    
+    <section class="about" id="about">
+      <div class="tentang">
+      <h2>&#128511;</h2>
+      <h1 class="me"> About me</h1>
+      </div>
+      
+      <div class = "image-container">
+        <img src="joget.jpg" alt="joget">
+        <img src="sapi.jpg" alt="sapi">
+        <img src="bola.jpg" alt="bola">
+        <img src="fotbar.jpg" alt="fotbar">
+      </div>
+      
+      <div class="isi">
+        <p> Hey there! I'm a 10th-grade student at SMAN 19 Surabaya with a big passion for technology, especially software engineering. Right now, I’m diving into C++ and back-end development to build efficient and cool applications. I love challenges that test my logic and problem-solving skills. Plus, I’m always curious about new technologies and enjoy exploring the world of coding.</p>
+        
+      </div>
+      
+    <section class="skills" id="skills">
+    <h2 class="skills-title">MY SKILLS</h2>
+    <div class="skills-container">
+        <!-- Front-end Section -->
+        <div class="skill-category">
+            <h3>Front-end</h3>
+            <div class="skill">
+                <p>HTML</p>
+                <div class="progress-bar">
+                    <div class="progress html">80%</div>
+                </div>
+            </div>
+            <div class="skill">
+                <p>CSS</p>
+                <div class="progress-bar">
+                    <div class="progress css">50%</div>
+                </div>
+            </div>
+            <div class="skill">
+                <p>JavaScript</p>
+                <div class="progress-bar">
+                    <div class="progress js">20%</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Back-end Section -->
+        <div class="skill-category">
+            <h3>Back-end</h3>
+            <div class="skill">
+                <p>C++</p>
+                <div class="progress-bar">
+                    <div class="progress cpp">80%</div>
+                </div>
+            </div>
+            <div class="skill">
+                <p>Python</p>
+                <div class="progress-bar">
+                    <div class="progress python">50%</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Frameworks Section -->
+        <div class="skill-category">
+            <h3>Frameworks</h3>
+            <div class="skill">
+                <p>Bootstrap</p>
+                <div class="progress-bar">
+                    <div class="progress bootstrap">50%</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- From Uiverse.io by barisdogansutcu --> 
+<input type="checkbox" checked="checked" id="favorite" name="favorite-checkbox" value="favorite-button">
+<label for="favorite" class="container">
+  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-heart"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>
+  <div class="action">
+    <span class="option-1">Add to Favorites</span>
+    <span class="option-2">Added to Favorites</span>
+  </div>
+</label>
+</section>
+
+
+  <section id="contact">
+    <h2>Pesan</h2>
+    <form action="save_message.php" method="POST">
+        <textarea name="message" required></textarea>
+        <button type="submit">Kirim</button>
+    </form>
+<div id="message-status"></div>
+
+<script>
+    const params = new URLSearchParams(window.location.search);
+    const messageStatus = document.getElementById("message-status");
+
+    if (params.get("status") === "success") {
+        messageStatus.innerHTML = "<p style='color: green;'>Pesan berhasil dikirim!</p>";
+    } else if (params.get("status") === "error") {
+        messageStatus.innerHTML = "<p style='color: red;'>Terjadi kesalahan, coba lagi!</p>";
+    }
+
+    // Hapus parameter status dari URL setelah ditampilkan
+    if (params.has("status")) {
+        window.history.replaceState(null, "", window.location.pathname);
+    }
+</script>
+
+
+
+
+
+
+    
+    <footer>
+    <div class="social-icons">
+        <a href="https://www.tiktok.com/@mass_d_354?_t=ZS-8ump4YiMRkd&_r=1" target="_blank">
+            <img src="tiktok-icon.png" alt="TikTok">
+        </a>
+        <a href="https://www.instagram.com/dappss_ai?igsh=MTRzYWJ2c2drZmtlMg==" target="_blank">
+            <img src="instagram-icon.png" alt="Instagram">
+        </a>
+    </div>
+</footer>
+
+</section>
+
+    
+
+
+</body>
+</html>

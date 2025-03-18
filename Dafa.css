@@ -1,0 +1,638 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap');
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: black;
+    color: white;
+}
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between; /* Logo di kiri, menu di kanan */
+    align-items: center;
+    background-color: black;
+    padding: 10px 20px;
+  
+}
+
+.nav-links{
+  position: sticky;
+  top: 0;
+}
+
+/* Logo */
+.logo img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+/* Menu */
+.nav-links {
+    display: flex;
+}
+
+.menu {
+    display: flex;
+    gap: 30px; /* Jarak antar menu */
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 25px;
+    outline: none;
+    background: none;
+    border: none;
+    text-transform: none;
+    transition: 0.5s ease;
+    border-radius: 25px;
+  
+}
+
+.nav-links a:focus,
+.nav-links a:active {
+    outline: none;
+    background-color: transparent;
+}
+
+
+.nav-links a:hover {
+    background-color: #6495ED;
+}
+.hero-right img {
+    width: 400px; /* Maksimalkan ukuran dalam grid */
+    max-width: 400px; /* Biar tidak terlalu besar */
+    border-radius: 15px; /* Membuat sudut lebih halus */
+    box-shadow: 0px 5px 15px rgba(255, 255, 255, 0.3); /* Efek bayangan */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    gap: 50px;
+    margin-left: 120px;
+}
+
+
+/* Efek hover */
+.hero-right img:hover {
+    transform: scale(1.05); /* Perbesar sedikit saat hover */
+    box-shadow: 0px 10px 25px rgba(255, 255, 255, 0.5);
+}
+.dapa {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 50px;
+    padding: 60px;
+}
+
+.judul {
+    text-align: center;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.judul h1 {
+    font-size: 28px;
+    text-transform: uppercase;
+    color: white;
+}
+
+.pre-title, .hero-name, .hero-praf {
+    color: white;
+}
+
+
+
+/*bagian home */
+.pre-title {
+    font-size: 35px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #ffcc00;
+    margin-bottom: 10px;
+}
+.hero-name {
+    font-size: 48px;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 15px;
+    background: linear-gradient(90deg, #ffcc00, #ff6600);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.hero-name span {
+    color: #ff6600;
+}
+
+/* Styling Deskripsi */
+.hero-praf {
+    font-size: 18px;
+    font-weight: 300;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
+    margin-top: 10px;
+}
+.hero-name:hover {
+    transform: scale(1.05);
+    transition: 0.3s;
+}
+
+/* Efek kursor kedip */
+#typing::after {
+    content: "|";
+    display: inline-block;
+    width: 5px;
+    animation: blink 0.7s infinite;
+}
+
+@keyframes blink {
+    50% {
+        opacity: 0;
+    }
+}
+
+.tentang {
+  font-size: 50px;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: -50px;
+}
+
+  .me {
+    background: linear-gradient(90deg, #ff8c00, #ffd700, #ffffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.me {
+    animation: fadeInUp 2s ease-out;
+}
+
+.isi {
+    font-family: 'Poppins', sans-serif;
+    font-size: 25px; 
+    font-weight: 500px;
+    max-width: 80%;
+    color: rgba(255, 255, 255, 0.9);
+    text-transform: capitalize;
+    letter-spacing: 1px;
+    text-align: center;
+    padding: 10px 0;
+    position: relative;
+    display: inline-block;
+    transition: opacity 0.3s ease-in-out;
+    justify-content: center;
+    margin-top:-20px;
+}
+
+.isi:hover {
+    opacity: 0.8;
+}
+
+.isi::after {
+    content: "";
+    display: block;
+    width: 120px;
+    height: 4px;
+    background: linear-gradient(90deg, #ffcc00, #ff6600);
+    margin: 8px auto 0;
+    border-radius: 5px;
+}
+
+.about {
+    background: linear-gradient(135deg, #222, #444); /* Gradasi abu gelap */
+    padding: 40px 0;
+    color: #f1f1f1;
+    border-radius: 15px;
+    box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+    text-align: center;
+    margin-top: 80px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+.image-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  gap:  1px;
+  margin: 0  auto ;
+  margin-left: 70px;
+  margin-bottom: 20px;
+}
+
+.image-container img {
+  width: 250px;
+  max-width: 300px;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  
+}
+
+.image-container img:hover {
+  transform: scale(1.20);
+}
+
+.skills {
+  background-color: black;
+  border-radius: 25px;
+  margin-top: 100px;
+  margin-left: -50px;
+}
+
+.skills-title {
+  margin-top: 20px;
+  background: linear-gradient(90deg, #ff8c00, #ffd700, #ffffff);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: bold;
+    font-size: 50px;
+    animation: fadeInUp 2s ease-in-out;
+    text-align: center;
+    margin-left: 50px;
+}
+
+.skills-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 100px;
+    width: 80%;
+    margin: auto;
+    text-align: center;
+}
+
+.skill-category {
+  
+    width: 300px;
+    height: 350px;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+background: linear-gradient(135deg, #222, #444);
+}
+
+.skill-category h3 {
+    margin-bottom: 15px;
+    font-size: 1.5em;
+}
+
+.skill {
+    margin: 15px 0;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 20px;
+    background-color: #ddd;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.progress {
+    height: 100%;
+    text-align: center;
+    line-height: 20px;
+    color: white;
+    font-weight: bold;
+}
+
+.html {
+    width: 80%;
+    background-color: #f16529;
+}
+
+.css {
+    width: 50%;
+    background-color: #2965f1;
+}
+
+.js {
+    width: 20%;
+    background-color: #f7df1e;
+    color: black;
+}
+
+.cpp {
+    width: 80%;
+    background-color: #00599c;
+}
+
+.python {
+    width: 50%;
+    background-color: #3776ab;
+}
+
+.bootstrap {
+    width: 50%;
+    background-color: #563d7c;
+}
+
+/* From Uiverse.io by barisdogansutcu */ 
+label {
+ background-color: white;
+ margin-top: 80px;
+ display: flex;
+ align-items: center;
+ gap: 14px;
+ padding: 10px 15px 10px 10px;
+ cursor: pointer;
+ user-select: none;
+ border-radius: 10px;
+ box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+ color: black;
+ width: 250px;
+ margin-left: 42%;
+ margin-bottom: 100px ;
+}
+
+input {
+ display: none;
+}
+
+input:checked + label svg {
+ fill: hsl(0deg 100% 50%);
+ stroke: hsl(0deg 100% 50%);
+ animation: heartButton 1s;
+}
+
+@keyframes heartButton {
+ 0% {
+  transform: scale(1);
+ }
+
+ 25% {
+  transform: scale(1.3);
+ }
+
+ 50% {
+  transform: scale(1);
+ }
+
+ 75% {
+  transform: scale(1.3);
+ }
+
+ 100% {
+  transform: scale(1);
+ }
+}
+
+input + label .action {
+ position: relative;
+ overflow: hidden;
+ display: grid;
+}
+
+input + label .action span {
+ grid-column-start: 1;
+ grid-column-end: 1;
+ grid-row-start: 1;
+ grid-row-end: 1;
+ transition: all .5s;
+}
+
+input + label .action span.option-1 {
+ transform: translate(0px,0%);
+ opacity: 1;
+}
+
+input:checked + label .action span.option-1 {
+ transform: translate(0px,-100%);
+ opacity: 0;
+}
+
+input + label .action span.option-2 {
+ transform: translate(0px,100%);
+ opacity: 0;
+}
+
+input:checked + label .action span.option-2 {
+ transform: translate(0px,0%);
+ opacity: 1;
+}
+
+/* From Uiverse.io by omriluz */ 
+#contact {
+    text-align: center;
+    padding: 40px;
+    background-color: #222;
+    border-radius: 10px;
+    max-width: 600px;
+    margin: auto;
+    margin-top: 80px;
+}
+
+#contact h2 {
+    color: #fff;
+    margin-bottom: 20px;
+}
+
+#contact textarea {
+    width: 100%;
+    height: 150px;
+    padding: 10px;
+    border-radius: 5px;
+    border: none;
+    background-color: #333;
+    color: white;
+    font-size: 16px;
+}
+
+#contact button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: #ff9800;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#contact button:hover {
+    background-color: #e68900;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #222;
+    margin-top: 30px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-icons a img {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s ease;
+}
+
+.social-icons a img:hover {
+    transform: scale(1.1);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+/* Responsif: Navbar jadi menu burger */
+@media (max-width: 768px) {
+  .hero-praf {
+        font-size: 13px; /* Lebih kecil di mobile */
+        width: 100%;
+        max-width: 120%;
+        padding: 0 10px;
+        
+    }
+    .nav-links {
+        display: none; /* Sembunyikan menu di mode mobile */
+    }
+
+    .dapa {
+        grid-template-columns: 1fr;
+        text-align: center;
+        height: 720px;
+        display: grid;
+        column-gap: 10px;
+    }
+
+        
+    
+   .judul{
+     margin-top: 5px;
+     margin-bottom: 0px;
+   }
+
+  .hero-right img {
+    width: 100%; /* Maksimalkan ukuran dalam grid */
+    max-width: 400px; /* Biar tidak terlalu besar */
+    border-radius: 15px; /* Membuat sudut lebih halus */
+    box-shadow: 0px 5px 15px rgba(255, 255, 255, 0.3); /* Efek bayangan */
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+    gap: 50px;
+    margin: 0 auto;
+    display: block;
+}
+
+
+/* Efek hover */
+.hero-right img:hover {
+    transform: scale(1.05); /* Perbesar sedikit saat hover */
+    box-shadow: 0px 8px 20px rgba(255, 255, 255, 0.5);
+    }
+    
+    .tentang{
+      font-size: 20px;
+      margin-top: 50px;
+    }
+
+.isi {
+        font-size: 14px;
+        font-weight: 400;
+        line-height: 1.5;
+        text-align: center;
+        padding: 0 15px;
+        max-width: 90%;
+        margin: auto;
+    }
+
+    .isi::after {
+        width: 40px; /* Garis lebih pendek */
+        height: 2px; /* Garis lebih tipis */
+    }
+    .about {
+        padding: 40px 20px;
+        border-radius: 10px;
+    }
+
+    .about h2 {
+        font-size: 24px;
+    }
+
+    .about p {
+        font-size: 16px;
+        line-height: 1.5;
+    }
+
+    .about .underline {
+        width: 40px;
+        height: 3px;
+    }
+    @keyframes fadeScaleUp {
+    0% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    }
+    
+    .image-container {
+      grid-template-columns: 1fr 1fr;
+      margin-right: 60px;
+      margin-left: -8px;
+      gap: 20px;
+      
+    }
+    
+    .image-container img {
+  width: 150px;
+  height: 100px;
+}
+
+.about{
+    animation: fadeScaleUp 1s ease-out;
+}
+
+.skills-container {
+  grid-template-columns: 1fr;
+  gap: 25px;
+  margin-left: 50px;
+}
+
+label {
+  margin-left: 50px;
+}
+.skill-category {
+  width: 230px;
+}
+}
+
+
+
+    
+
+
